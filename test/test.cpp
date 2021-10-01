@@ -49,7 +49,7 @@ TEST(PIDControllerTest, testPIDControllerWindowSizeParam) {
  */
 TEST(PIDControllerTest, testPIDControllerP) {
   std::unique_ptr<PIDController> pid(new PIDController());
-  const double Kp = 0.5;
+  const double Kp = 1.0;
   const double Ki = 0.0;
   const double Kd = 0.0;
   const double ref_vel = 10.0;
@@ -65,7 +65,7 @@ TEST(PIDControllerTest, testPIDControllerP) {
  */
 TEST(PIDControllerTest, testPIDControllerPD) {
   std::unique_ptr<PIDController> pid(new PIDController());
-  const double Kp = 0.5;
+  const double Kp = 1.0;
   const double Ki = 0.0;
   const double Kd = 0.5;
   const double ref_vel = 12.0;
@@ -82,7 +82,7 @@ TEST(PIDControllerTest, testPIDControllerPD) {
  */
 TEST(PIDControllerTest, testPIDControllerPI) {
   std::unique_ptr<PIDController> pid(new PIDController());
-  const double Kp = 0.5;
+  const double Kp = 1.0;
   const double Ki = 0.5;
   const double Kd = 0.0;
   const double ref_vel = 12.0;

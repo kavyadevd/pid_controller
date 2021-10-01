@@ -1,7 +1,6 @@
 # C++ Boilerplate
-[![Build Status](https://app.travis-ci.com/sakshikakde/cpp-boilerplate.svg?branch=part1_devel)](https://app.travis-ci.com/sakshikakde/cpp-boilerplate)
-[![Coverage Status](https://coveralls.io/repos/github/sakshikakde/cpp-boilerplate/badge.svg?branch=part1_devel)](https://coveralls.io/github/sakshikakde/cpp-boilerplate?branch=part1_devel)
-
+[![Build Status](https://app.travis-ci.com/sakshikakde/pid_controller.svg?branch=main)](https://app.travis-ci.com/sakshikakde/pid_controller)
+[![Coverage Status](https://coveralls.io/repos/github/sakshikakde/pid_controller/badge.svg?branch=main)](https://coveralls.io/github/sakshikakde/pid_controller?branch=main)
 ---
 # Part 1
 ## Team members
@@ -10,21 +9,21 @@
 
 ## Overview
 
-Simple starter C++ project with:
+A C++ project to implement PID controller for velocity with:
 
 - cmake
 - googletest
 
 ## Standard install via command-line
 ```
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/sakshikakde/pid_controller.git
 cd <path to repository>
 mkdir build
 cd build
 cmake ..
 make
 Run tests: ./test/cpp-test
-Run program: ./app/shell-app
+Run program: ./app/pid_controller_app
 ```
 
 ## Building for code coverage (for assignments beginning in Week 4)
@@ -44,16 +43,16 @@ In your Eclipse workspace directory (or create a new one), checkout the repo (an
 ```
 mkdir -p ~/workspace
 cd ~/workspace
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/sakshikakde/pid_controller.git
 ```
 
 In your work directory, use cmake to create an Eclipse project for an [out-of-source build] of cpp-boilerplate
 
 ```
 cd ~/workspace
-mkdir -p boilerplate-eclipse
-cd boilerplate-eclipse
-cmake -G "Eclipse CDT4 - Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug -D CMAKE_ECLIPSE_VERSION=4.7.0 -D CMAKE_CXX_COMPILER_ARG1=-std=c++14 ../cpp-boilerplate/
+mkdir -p pid_controller_eclipse
+cd pid_controller_eclipse
+cmake -G "Eclipse CDT4 - Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug -D CMAKE_ECLIPSE_VERSION=4.7.0 -D CMAKE_CXX_COMPILER_ARG1=-std=c++14 ../pid_controller_eclipse/
 ```
 
 ## Import

@@ -78,7 +78,11 @@ void PIDController::setGains(double kp, double ki, double kd) {
      * 
      */
 }
-
+/**
+ * @brief A function to retrun the kp, ki, kd values
+ * 
+ * @return vector<double> 
+ */
 vector<double> PIDController::getGains() {
     /**
      * @todo Return values of kp, ki, kd in form of vector

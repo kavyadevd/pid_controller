@@ -33,7 +33,8 @@ class PIDController {
     double kp;  // Proportional gain
     double ki;  // Integral gain
     double kd;  // Derivative gain
-    vector<double> error_array;  // Array to store past errors for integral and derivative terms
+    vector<double> error_array;  // Array to store past errors for integral
+    // and derivative terms
 };
 
 #endif  // INCLUDE_PID_CONTROLLER_HPP_

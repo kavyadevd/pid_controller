@@ -1,5 +1,5 @@
 # C++ Boilerplate
-[![Build Status](https://app.travis-ci.com/sakshikakde/pid_controller.svg?branch=main)](https://app.travis-ci.com/sakshikakde/pid_controller)[![Coverage Status](https://coveralls.io/repos/github/sakshikakde/cpp-boilerplate/badge.svg?branch=part1_devel)](https://coveralls.io/github/sakshikakde/cpp-boilerplate?branch=part1_devel)
+[![Build Status](https://app.travis-ci.com/sakshikakde/pid_controller.svg?branch=main)](https://app.travis-ci.com/sakshikakde/pid_controller)[![Coverage Status]
 
 ---
 # Part 1

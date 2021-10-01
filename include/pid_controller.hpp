@@ -24,14 +24,16 @@ class PIDController {
     PIDController(double kp, double ki, double kd);
     ~PIDController();
     double computeOutput(double ref_vel, double actual_vel);
-    double setGains(double kp, double ki, double kd);
+    void setGains(double kp, double ki, double kd);
     vector<double> getGains();
+    void setWindowSize(int window_size);
+    int getWindowSize();
  private:
-    int window_size = 10;  // window size for integral
+    int window_size;  // window size for integral
     double kp;  // Proportional gain
     double ki;  // Integral gain
     double kd;  // Derivative gain
-    vector<double> error_array;
+    vector<double> error_array;  // Array to store past errors for integral and derivative terms
 };
 
 #endif  // INCLUDE_PID_CONTROLLER_HPP_

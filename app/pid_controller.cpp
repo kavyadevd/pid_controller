@@ -16,7 +16,12 @@
  * @brief Default constructor
  * 
  */
-PIDController::PIDController() {}
+PIDController::PIDController() {
+    /**
+     * @todo Implement the default constructor: initialize default kp, ki, kd, window_size
+     * 
+     */
+}
 
 /**
  * @brief Explicit Constructor to initialize the controller gains
@@ -26,6 +31,10 @@ PIDController::PIDController() {}
  * @param  kd Derivative gain
  */
 PIDController::PIDController(double kp, double ki, double kd) {
+    /**
+     * @todo initialize default kp, ki, kd using the arguments
+     * 
+     */
 }
 
 /**
@@ -43,6 +52,12 @@ PIDController::~PIDController() {
  * @return double 
  */
 double PIDController::computeOutput(double ref_vel, double actual_vel) {
+    /**
+     * @todo Using ref vel and actual vel, compute current error.
+     * Check the length of error array. If length == 0, the there wont be any derivative or integral terms. 
+     * Set them to zero. If length >= 1, compute derivative and integral using dt as 1.
+     * 
+     */
     return 0;
 }
 /**
@@ -53,13 +68,42 @@ double PIDController::computeOutput(double ref_vel, double actual_vel) {
  * @param kd Derivative gain 
  * @return double 
  */
-double PIDController::setGains(double kp, double ki, double kd) {
-    return 0;
+void PIDController::setGains(double kp, double ki, double kd) {
+    /**
+     * @todo Set kp, ki, kd using the arguments
+     * 
+     */
 }
 
 vector<double> PIDController::getGains() {
+    /**
+     * @todo Return values of kp, ki, kd in form of vector
+     * 
+     */
     double kp = 0;
     double ki = 0;
     double kd = 0;
     return {kp, ki, kd};
+}
+/**
+ * @brief A function to set window size for integral term
+ * 
+ * @param window_size Size of window for integral term
+ */
+void PIDController::setWindowSize(int window_size) {
+    /**
+     * @todo Set window size param using the argument
+     * 
+     */
+}
+/**
+ * @brief A function to return size of the window used to calculate the integral term
+ * 
+ * @return int 
+ */
+int PIDController::getWindowSize() {
+    /**
+     * @todo return the window size param
+     * 
+     */
 }

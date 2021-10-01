@@ -16,33 +16,39 @@
  * 
  */
 TEST(PIDControllerTest, testPIDControllerDefaltParam) {
-  PIDController *pid = new PIDController();
+  std::unique_ptr<PIDController> pid(new PIDController());
   const vector<double> expected_value = {1.0, 1.0, 1.0};
-  // EXPECT_EQ(pid->getGains(), expected_value);
-  EXPECT_EQ(1, 1);
-  delete pid;
+  EXPECT_EQ(pid->getGains(), expected_value);
 }
 /**
  * @brief Unit test for user defined parameters
  * 
  */
 TEST(PIDControllerTest, testPIDControllerCustomParam) {
-  PIDController *pid = new PIDController();
+  std::unique_ptr<PIDController> pid(new PIDController());
   const double Kp = 2.0;
   const double Ki = 2.0;
   const double Kd = 2.0;
   const vector<double> expected_value = {Kp, Ki, Kd};
   pid->setGains(Kp, Ki, Kd);
-  // EXPECT_EQ(pid->getGains(), expected_value);
-  EXPECT_EQ(1, 1);
-  delete pid;
+  EXPECT_EQ(pid->getGains(), expected_value);
+}
+/**
+ * @brief Unit test for window size parameter
+ * 
+ */
+TEST(PIDControllerTest, testPIDControllerWindowSizeParam) {
+  std::unique_ptr<PIDController> pid(new PIDController());
+  const int expected_value = 5;
+  pid->setWindowSize(5);
+  EXPECT_EQ(pid->getWindowSize(), expected_value);
 }
 /**
  * @brief test Proportional component
  * 
  */
 TEST(PIDControllerTest, testPIDControllerP) {
-  PIDController *pid = new PIDController();
+  std::unique_ptr<PIDController> pid(new PIDController());
   const double Kp = 0.5;
   const double Ki = 0.0;
   const double Kd = 0.0;
@@ -51,17 +57,15 @@ TEST(PIDControllerTest, testPIDControllerP) {
   const double expected_output = 2.5;
   pid->setGains(Kp, Ki, Kd);
   double computed_output = pid->computeOutput(ref_vel, actual_vel);
-  // EXPECT_EQ(computed_output, expected_output);
-  EXPECT_EQ(1, 1);
-  delete pid;
+  EXPECT_EQ(computed_output, expected_output);
 }
 /**
  * @brief test Proportional and Derivative component
  * 
  */
 TEST(PIDControllerTest, testPIDControllerPD) {
-  PIDController *pid = new PIDController();
-  const double Kp = 1.0;
+  std::unique_ptr<PIDController> pid(new PIDController());
+  const double Kp = 0.5;
   const double Ki = 0.0;
   const double Kd = 0.5;
   const double ref_vel = 12.0;
@@ -70,17 +74,15 @@ TEST(PIDControllerTest, testPIDControllerPD) {
   pid->setGains(Kp, Ki, Kd);
   double computed_output = pid->computeOutput(ref_vel, actual_vel);  //  output after 1 iter = 7
   computed_output = pid->computeOutput(ref_vel, computed_output);  // output after 2 iter = 6.5
-  // EXPECT_EQ(computed_output, expected_output);
-  EXPECT_EQ(1, 1);
-  delete pid;
+  EXPECT_EQ(computed_output, expected_output);
 }
 /**
  * @brief test Proportional and Integral component
  * 
  */
 TEST(PIDControllerTest, testPIDControllerPI) {
-  PIDController *pid = new PIDController();
-  const double Kp = 1.0;
+  std::unique_ptr<PIDController> pid(new PIDController());
+  const double Kp = 0.5;
   const double Ki = 0.5;
   const double Kd = 0.0;
   const double ref_vel = 12.0;
@@ -92,7 +94,5 @@ TEST(PIDControllerTest, testPIDControllerPI) {
   // output after 2 iter = (1 * 7) + (0.5 * 6) = 10
   computed_output = pid->computeOutput(ref_vel, computed_output);  // e2 = 2,
   // output after 3 iter = (1 * 2) + (0.5 * (7 + 6 + 2) /3) = 4.33
-  // EXPECT_NEAR(computed_output, expected_output, 0.1);
-  EXPECT_EQ(1, 1);
-  delete pid;
+  EXPECT_NEAR(computed_output, expected_output, 0.1);
 }

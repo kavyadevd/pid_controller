@@ -1,7 +1,7 @@
 /**
- * @file unittest_PIDControllerParam.cpp
+ * @file test.cpp
  * @author Sakshi Kakde, Hrushikesh Badhale
- * @brief 
+ * @brief Test cases for PIDController class
  * @version 0.1
  * @date 2021-09-30
  * 

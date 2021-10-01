@@ -1,7 +1,7 @@
 /**
  * @file main.cpp
- * @author your name (you@domain.com)
- * @brief 
+ * @author Sakshi Kakde, Hrushikesh Budhale
+ * @brief main file for tests
  * @version 0.1
  * @date 2021-10-01
  * 

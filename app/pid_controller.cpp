@@ -1,7 +1,7 @@
 /**
  * @file pid_controller.cpp
- * @author your name (you@domain.com)
- * @brief 
+ * @author Sakshi Kakde, Hrushikesh Budhale
+ * @brief Source file for PIDController class
  * @version 0.1
  * 
  * 

@@ -1,6 +1,7 @@
 # C++ Boilerplate
 [![Build Status](https://app.travis-ci.com/sakshikakde/cpp-boilerplate.svg?branch=part1_devel)](https://app.travis-ci.com/sakshikakde/cpp-boilerplate)
 [![Coverage Status](https://coveralls.io/repos/github/sakshikakde/cpp-boilerplate/badge.svg?branch=part1_devel)](https://coveralls.io/github/sakshikakde/cpp-boilerplate?branch=part1_devel)
+
 ---
 # Part 1
 ## Team members

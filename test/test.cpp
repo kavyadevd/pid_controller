@@ -49,15 +49,9 @@ TEST(PIDControllerTest, testPIDControllerWindowSizeParam) {
  */
 TEST(PIDControllerTest, testPIDControllerP) {
   std::unique_ptr<PIDController> pid(new PIDController());
-<<<<<<< HEAD
   const double kp = 0.5;
   const double ki = 0.0;
   const double kd = 0.0;
-=======
-  const double Kp = 1.0;
-  const double Ki = 0.0;
-  const double Kd = 0.0;
->>>>>>> 0088cb060bc8d30ad8668775a1a4d65f7e7bef8b
   const double ref_vel = 10.0;
   const double actual_vel = 5.0;
   const double expected_output = 7.5;
@@ -71,15 +65,9 @@ TEST(PIDControllerTest, testPIDControllerP) {
  */
 TEST(PIDControllerTest, testPIDControllerPD) {
   std::unique_ptr<PIDController> pid(new PIDController());
-<<<<<<< HEAD
   const double kp = 0.5;
   const double ki = 0.0;
   const double kd = 0.02;
-=======
-  const double Kp = 1.0;
-  const double Ki = 0.0;
-  const double Kd = 0.5;
->>>>>>> 0088cb060bc8d30ad8668775a1a4d65f7e7bef8b
   const double ref_vel = 12.0;
   const double actual_vel = 5.0;
   const double expected_output = 10.2;  // Expected output after 2 iterations
@@ -94,15 +82,9 @@ TEST(PIDControllerTest, testPIDControllerPD) {
  */
 TEST(PIDControllerTest, testPIDControllerPI) {
   std::unique_ptr<PIDController> pid(new PIDController());
-<<<<<<< HEAD
   const double kp = 0.5;
   const double ki = 0.05;
   const double kd = 0.0;
-=======
-  const double Kp = 1.0;
-  const double Ki = 0.5;
-  const double Kd = 0.0;
->>>>>>> 0088cb060bc8d30ad8668775a1a4d65f7e7bef8b
   const double ref_vel = 12.0;
   const double actual_vel = 5.0;
   const double expected_output = 11.6;  // Expected output after 3 iterations

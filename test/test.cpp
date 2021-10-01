@@ -49,15 +49,15 @@ TEST(PIDControllerTest, testPIDControllerWindowSizeParam) {
  */
 TEST(PIDControllerTest, testPIDControllerP) {
   std::unique_ptr<PIDController> pid(new PIDController());
-  const double Kp = 0.5;
-  const double Ki = 0.0;
-  const double Kd = 0.0;
+  const double kp = 0.5;
+  const double ki = 0.0;
+  const double kd = 0.0;
   const double ref_vel = 10.0;
   const double actual_vel = 5.0;
-  const double expected_output = 2.5;
-  pid->setGains(Kp, Ki, Kd);
+  const double expected_output = 7.5;
+  pid->setGains(kp, ki, kd);
   double computed_output = pid->computeOutput(ref_vel, actual_vel);
-  EXPECT_EQ(computed_output, expected_output);
+  EXPECT_NEAR(computed_output, expected_output, 0.1);
 }
 /**
  * @brief test Proportional and Derivative component
@@ -65,16 +65,16 @@ TEST(PIDControllerTest, testPIDControllerP) {
  */
 TEST(PIDControllerTest, testPIDControllerPD) {
   std::unique_ptr<PIDController> pid(new PIDController());
-  const double Kp = 0.5;
-  const double Ki = 0.0;
-  const double Kd = 0.5;
+  const double kp = 0.5;
+  const double ki = 0.0;
+  const double kd = 0.02;
   const double ref_vel = 12.0;
   const double actual_vel = 5.0;
-  const double expected_output = 6.5;  // Expected output after two iterations
-  pid->setGains(Kp, Ki, Kd);
-  double computed_output = pid->computeOutput(ref_vel, actual_vel);  //  output after 1 iter = 7
-  computed_output = pid->computeOutput(ref_vel, computed_output);  // output after 2 iter = 6.5
-  EXPECT_EQ(computed_output, expected_output);
+  const double expected_output = 10.2;  // Expected output after 2 iterations
+  pid->setGains(kp, ki, kd);
+  double computed_output = pid->computeOutput(ref_vel, actual_vel);
+  computed_output = pid->computeOutput(ref_vel, computed_output);
+  EXPECT_NEAR(computed_output, expected_output, 0.1);
 }
 /**
  * @brief test Proportional and Integral component
@@ -82,17 +82,33 @@ TEST(PIDControllerTest, testPIDControllerPD) {
  */
 TEST(PIDControllerTest, testPIDControllerPI) {
   std::unique_ptr<PIDController> pid(new PIDController());
-  const double Kp = 0.5;
-  const double Ki = 0.5;
-  const double Kd = 0.0;
+  const double kp = 0.5;
+  const double ki = 0.05;
+  const double kd = 0.0;
   const double ref_vel = 12.0;
   const double actual_vel = 5.0;
-  const double expected_output = 4.3;  // Expected output after two iterations
-  pid->setGains(Kp, Ki, Kd);
-  double computed_output = pid->computeOutput(ref_vel, actual_vel);  //  e0 = 7, output after 1 iter = 7
-  computed_output = pid->computeOutput(ref_vel, computed_output);  // e1 = 5,
-  // output after 2 iter = (1 * 7) + (0.5 * 6) = 10
-  computed_output = pid->computeOutput(ref_vel, computed_output);  // e2 = 2,
-  // output after 3 iter = (1 * 2) + (0.5 * (7 + 6 + 2) /3) = 4.33
+  const double expected_output = 11.6;  // Expected output after 3 iterations
+  pid->setGains(kp, ki, kd);
+  double computed_output = pid->computeOutput(ref_vel, actual_vel);
+  computed_output = pid->computeOutput(ref_vel, computed_output);
+  computed_output = pid->computeOutput(ref_vel, computed_output);
   EXPECT_NEAR(computed_output, expected_output, 0.1);
+}
+/**
+ * @brief test to verify convergence
+ * 
+ */
+TEST(PIDControllerTest, testPIDControllerPID) {
+  std::unique_ptr<PIDController> pid(new PIDController());
+  const double kp = 1.0;
+  const double ki = 0.05;
+  const double kd = 0.02;
+  const double ref_vel = 12.0;
+  const double actual_vel = 5.0;
+  const double expected_output = ref_vel;  // output after 15 iterations
+  pid->setGains(kp, ki, kd);
+  double computed_output = actual_vel;
+  for (int i = 0; i< 15; i++)
+    computed_output = pid->computeOutput(ref_vel, computed_output);
+  EXPECT_NEAR(computed_output, expected_output, 0.01);
 }

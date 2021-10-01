@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="1.82"/>
+    <errors>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;PIDController::kp&apos; is not initialized in the constructor." verbose="Member variable &apos;PIDController::kp&apos; is not initialized in the constructor." cwe="398">
+            <location file="app/pid_controller.cpp" line="28"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;PIDController::ki&apos; is not initialized in the constructor." verbose="Member variable &apos;PIDController::ki&apos; is not initialized in the constructor." cwe="398">
+            <location file="app/pid_controller.cpp" line="28"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;PIDController::kd&apos; is not initialized in the constructor." verbose="Member variable &apos;PIDController::kd&apos; is not initialized in the constructor." cwe="398">
+            <location file="app/pid_controller.cpp" line="28"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;computeOutput&apos; is never used." verbose="The function &apos;computeOutput&apos; is never used." cwe="561">
+            <location file="app/pid_controller.cpp" line="45"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;getGains&apos; is never used." verbose="The function &apos;getGains&apos; is never used." cwe="561">
+            <location file="app/pid_controller.cpp" line="60"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;setGains&apos; is never used." verbose="The function &apos;setGains&apos; is never used." cwe="561">
+            <location file="app/pid_controller.cpp" line="56"/>
+        </error>
+    </errors>
+</results>

@@ -112,3 +112,4 @@ TEST(PIDControllerTest, testPIDControllerPID) {
     computed_output = pid->computeOutput(ref_vel, computed_output);
   EXPECT_NEAR(computed_output, expected_output, 0.01);
 }
+

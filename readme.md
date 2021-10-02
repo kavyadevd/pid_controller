@@ -1,11 +1,16 @@
 # C++ Boilerplate
-[![Build Status](https://app.travis-ci.com/sakshikakde/pid_controller.svg?branch=main)](https://app.travis-ci.com/sakshikakde/pid_controller)
-[![Coverage Status](https://coveralls.io/repos/github/sakshikakde/pid_controller/badge.svg?branch=main)](https://coveralls.io/github/sakshikakde/pid_controller?branch=main)
+[![Build Status](https://app.travis-ci.com/kavyadevd/pid_controller.svg?branch=main)](https://app.travis-ci.com/kavyadevd/pid_controller)
+[![Coverage Status](https://coveralls.io/repos/github/kavyadevd/pid_controller/badge.svg?branch=main)](https://coveralls.io/github/kavyadevd/pid_controller?branch=main)
 ---
 # Part 1
 ## Team members
 1) Driver : Sakshi Kakde
 2) Navigator : Hrushikesh Budhale
+
+# Part 2
+## Team members
+1) Driver : Kavyashree Devadiga
+2) Navigator : Sameer Pusegaonkar
 
 ## Overview
 
@@ -16,7 +21,7 @@ A C++ project to implement PID controller for velocity with:
 
 ## Standard install via command-line
 ```
-git clone --recursive https://github.com/sakshikakde/pid_controller.git
+git clone --recursive git@github.com:kavyadevd/pid_controller.git
 cd <path to repository>
 mkdir build
 cd build
@@ -43,7 +48,7 @@ In your Eclipse workspace directory (or create a new one), checkout the repo (an
 ```
 mkdir -p ~/workspace
 cd ~/workspace
-git clone --recursive https://github.com/sakshikakde/pid_controller.git
+git clone --recursive https://github.com/kavyadevd/pid_controller.git
 ```
 
 In your work directory, use cmake to create an Eclipse project for an [out-of-source build] of cpp-boilerplate

@@ -10,6 +10,7 @@
  * @copyright Copyright (c) 2021
  * 
  */
+
 #include<pid_controller.hpp>
 
 /**
@@ -17,9 +18,9 @@
  * 
  */
 PIDController::PIDController() {
-    kp = 0.0;
-    ki = 0.0;
-    kd = 0.0;
+    kp = 1.0;
+    ki = 1.0;
+    kd = 1.0;
     window_size = 5;
 }
 

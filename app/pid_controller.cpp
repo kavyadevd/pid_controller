@@ -17,10 +17,10 @@
  * 
  */
 PIDController::PIDController() {
-    /**
-     * @todo Implement the default constructor: initialize default kp, ki, kd, window_size
-     * 
-     */
+    kp = 0.0;
+    ki = 0.0;
+    kd = 0.0;
+    window_size = 5;
 }
 
 /**

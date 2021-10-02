@@ -72,10 +72,9 @@ double PIDController::computeOutput(double ref_vel, double actual_vel) {
  * @return double 
  */
 void PIDController::setGains(double kp, double ki, double kd) {
-    /**
-     * @todo Set kp, ki, kd using the arguments
-     * 
-     */
+    PIDController::kp = kp;
+    PIDController::ki = ki;
+    PIDController::kd = kd;
 }
 /**
  * @brief A function to retrun the kp, ki, kd values
@@ -83,11 +82,7 @@ void PIDController::setGains(double kp, double ki, double kd) {
  * @return vector<double> 
  */
 vector<double> PIDController::getGains() {
-    /**
-     * @todo Return values of kp, ki, kd in form of vector
-     * 
-     */
-    return {0, 0, 0};
+    return {kp, ki, kd};
 }
 /**
  * @brief A function to set window size for integral term

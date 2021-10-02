@@ -10,7 +10,9 @@
  * @copyright Copyright (c) 2021
  * 
  */
-
+#include<math.h>
+#include<iostream>
+#include <numeric>
 #include<pid_controller.hpp>
 
 /**
@@ -52,17 +54,25 @@ PIDController::~PIDController() {
  * @return double 
  */
 double PIDController::computeOutput(double ref_vel, double actual_vel) {
-    /**
-     * @todo Using ref vel and actual vel, compute current error.
-     * Check the length of error array. If length == 0, the there wont be any derivative or integral terms. 
-     * Set them to zero. If length >= 1, compute derivative and integral using dt as 1.
-     * error = ref_vel - actual_vel
-     * der_err = current error - past error / dt
-     * int_err = sum(error_array) / size of array * dt
-     * control_output  = kp *  error + ki * int_err + kd * der_err
-     * output = actual_vel + control_output
-     */
-    return 0;
+    double error;
+    double  der_err = 0.0;
+    double int_err = 0.0;
+    if ( error_array.empty() ) {    // Edge case
+        error = ref_vel - actual_vel;
+        der_err = 0.0;
+        int_err = 0.0;
+    } else {
+        error = ref_vel - actual_vel;
+        der_err = (error - error_array[error_array.size()-1])/ 1;
+        double sum = std::accumulate(error_array.begin(), error_array.end(), 0.0);
+        int_err = (sum)/ error_array.size();
+    }
+    double  control_output  = kp *  error + ki * int_err + kd * der_err;
+    double  output = actual_vel + control_output;
+    if ( error_array.size() >= window_size )
+        error_array.erase(error_array.begin());
+    error_array.push_back(error);
+    return (round(output*100.0)/100.0);   // Return last error
 }
 /**
  * @brief Set the gains for the controller

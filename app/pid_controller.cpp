@@ -31,10 +31,9 @@ PIDController::PIDController() {
  * @param  kd Derivative gain
  */
 PIDController::PIDController(double kp, double ki, double kd) {
-    /**
-     * @todo initialize default kp, ki, kd using the arguments
-     * 
-     */
+    PIDController::kp = kp;
+    PIDController::ki = ki;
+    PIDController::kd = kd;
 }
 
 /**

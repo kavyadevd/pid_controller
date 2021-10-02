@@ -100,7 +100,7 @@ TEST(PIDControllerTest, testPIDControllerPI) {
  */
 TEST(PIDControllerTest, testPIDControllerPID) {
   std::unique_ptr<PIDController> pid(new PIDController());
-  const double kp = 1.0;
+  const double kp = 0.5;
   const double ki = 0.05;
   const double kd = 0.02;
   const double ref_vel = 12.0;

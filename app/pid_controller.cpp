@@ -64,12 +64,13 @@ double PIDController::computeOutput(double ref_vel, double actual_vel) {
     } else {
         error = ref_vel - actual_vel;
         der_err = (error - error_array[error_array.size()-1])/ 1;
+        // calculate sum for integral error
         double sum = std::accumulate(error_array.begin(), error_array.end(), 0.0);
         int_err = (sum)/ error_array.size();
     }
     double  control_output  = kp *  error + ki * int_err + kd * der_err;
     double  output = actual_vel + control_output;
-    if ( error_array.size() >= window_size )
+    if ( error_array.size() >= window_size )  // Restrict error array to defined window size
         error_array.erase(error_array.begin());
     error_array.push_back(error);
     return (round(output*100.0)/100.0);   // Return last error

@@ -9,7 +9,6 @@
  * 
  */
 #include<iostream>
-#include<vector>
 #include <memory>
 #include <pid_controller.hpp>
 
@@ -23,8 +22,8 @@ int main() {
     pid->setGains(kp, ki, kd);
     pid->setWindowSize(5);
     double computed_output;
-    for (int i = 0; i< 15; i++)
+    for (int i = 0; i< 15; i++)     // Call compute function recursively
       computed_output = pid->computeOutput(ref_vel, computed_output);
-    std::cout << "Coumputed output is : " << computed_output << std::endl;
+    std::cout << "Computed output is : " << computed_output << std::endl;
     return 0;
 }

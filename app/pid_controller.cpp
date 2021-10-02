@@ -90,10 +90,7 @@ vector<double> PIDController::getGains() {
  * @param window_size Size of window for integral term
  */
 void PIDController::setWindowSize(int window_size) {
-    /**
-     * @todo Set window size param using the argument
-     * 
-     */
+    PIDController::window_size = window_size;
 }
 /**
  * @brief A function to return size of the window used to calculate the integral term
@@ -101,9 +98,5 @@ void PIDController::setWindowSize(int window_size) {
  * @return int 
  */
 int PIDController::getWindowSize() {
-    /**
-     * @todo return the window size param
-     * 
-     */
-    return 0;
+    return window_size;
 }

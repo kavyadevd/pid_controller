@@ -19,6 +19,9 @@ TEST(PIDControllerTest, testPIDControllerDefaltParam) {
   std::unique_ptr<PIDController> pid(new PIDController());
   const vector<double> expected_value = {1.0, 1.0, 1.0};
   EXPECT_EQ(pid->getGains(), expected_value);
+
+  std::unique_ptr<PIDController> pid(new PIDController(1.0, 1.0, 1.0));
+  EXPECT_EQ(pid->getGains(), expected_value);
 }
 /**
  * @brief Unit test for user defined parameters

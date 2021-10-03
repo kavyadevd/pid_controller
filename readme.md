@@ -1,4 +1,4 @@
-# C++ Boilerplate
+# PID Controller
 [![Build Status](https://app.travis-ci.com/sakshikakde/pid_controller.svg?branch=main)](https://app.travis-ci.com/sakshikakde/pid_controller)
 [![Coverage Status](https://coveralls.io/repos/github/sakshikakde/pid_controller/badge.svg?branch=main)](https://coveralls.io/github/sakshikakde/pid_controller?branch=main)
 ---
@@ -6,6 +6,11 @@
 ## Team members
 1) Driver : Sakshi Kakde
 2) Navigator : Hrushikesh Budhale
+
+# Part 2
+## Team members
+1) Driver : Kavyashree Devadiga (kavyadevd)
+2) Navigator : Sameer Pusegaonkar (SamPusegaonkar)
 
 ## Overview
 
@@ -16,7 +21,7 @@ A C++ project to implement PID controller for velocity with:
 
 ## Standard install via command-line
 ```
-git clone --recursive https://github.com/sakshikakde/pid_controller.git
+git clone --recursive git@github.com:sakshikakde/pid_controller.git
 cd <path to repository>
 mkdir build
 cd build
@@ -128,3 +133,10 @@ perspetive view (or Windows->Perspective->Open Perspective->C/C++).
 - Git
 
     It is possible to manage version control through Eclipse and the git plugin, but it typically requires creating another project. If you're interested in this, try it out yourself and contact me on Canvas.
+
+- Doxygen
+
+    To generate the configuration file using doxygen run the following commands
+
+    1.  doxygen -g
+    2.  doxygen Doxyfile

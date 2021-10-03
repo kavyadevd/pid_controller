@@ -100,7 +100,7 @@ TEST(PIDControllerTest, testPIDControllerPI) {
  */
 TEST(PIDControllerTest, testPIDControllerPID) {
   std::unique_ptr<PIDController> pid(new PIDController());
-  const double kp = 0.5;
+  const double kp = 1;
   const double ki = 0.05;
   const double kd = 0.02;
   const double ref_vel = 12.0;
@@ -110,5 +110,5 @@ TEST(PIDControllerTest, testPIDControllerPID) {
   double computed_output = actual_vel;
   for (int i = 0; i< 15; i++)
     computed_output = pid->computeOutput(ref_vel, computed_output);
-  EXPECT_NEAR(computed_output, expected_output, 0.01);
+  EXPECT_NEAR(computed_output, expected_output, 0.0);
 }

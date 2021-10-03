@@ -12,3 +12,6 @@ build/
 
 #VS code files
 .vscode/
+
+#CPPlint 
+app/cpplint.py

@@ -1,4 +1,4 @@
-# C++ Boilerplate
+# PID Controller
 [![Build Status](https://app.travis-ci.com/kavyadevd/pid_controller.svg?branch=main)](https://app.travis-ci.com/kavyadevd/pid_controller)
 [![Coverage Status](https://coveralls.io/repos/github/kavyadevd/pid_controller/badge.svg?branch=main)](https://coveralls.io/github/kavyadevd/pid_controller?branch=main)
 ---

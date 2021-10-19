@@ -15,3 +15,6 @@ build/
 
 #CPPlint 
 app/cpplint.py
+
+*.html
+*.tex

@@ -12,6 +12,8 @@ LICENSE*.* linguist-vendored
 *.h text eol=crlf linguist-language=C++
 *.hpp text eol=crlf linguist-language=C++
 *.html text eol=crlf linguist-documentation linguist-generated=false
+*.css text eol=crlf linguist-documentation linguist-generated=false
+*.js text eol=crlf linguist-documentation linguist-generated=false
 *.tex text eol=crlf linguist-documentation
 *.md text eol=crlf linguist-language=Markdown linguist-documentation
 *.pdf binary linguist-documentation

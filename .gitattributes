@@ -14,7 +14,7 @@ LICENSE*.* linguist-vendored
 *.html text eol=crlf linguist-documentation linguist-generated=false
 *.css text eol=crlf linguist-documentation linguist-generated=false
 *.js text eol=crlf linguist-documentation linguist-generated=false
-*.tex text eol=crlf linguist-documentation
+*.tex text eol=crlf linguist-documentation linguist-generated=false
 *.md text eol=crlf linguist-language=Markdown linguist-documentation
 *.pdf binary linguist-documentation
 *.png binary
